@@ -2,9 +2,13 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 10px 30px;
 }
 
 .brand-link {
@@ -16,6 +20,42 @@
 }
 
 .h-brand-logo {
-  padding-bottom: 3px;
+  margin: 0;
+  padding: 0;
+}
+
+.h-login {
+  text-transform: uppercase;
+  margin-right: 30px;
+  border: none;
+  background: none;
+  color: #05386b;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.h-login:hover {
+  cursor: pointer;
+  color: #379683;
+}
+
+.h-sign-up {
+  text-transform: uppercase;
+  height: 40px;
+  width: 100px;
+  border: none;
+  background: none;
+  border-radius: 5px;
+  color: #05386b;
+  border: 1px solid #379683;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.h-sign-up:hover {
+  cursor: pointer;
+  background-color: #379683;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 10px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 10px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 /*# sourceMappingURL=HomeNav.css.map */
