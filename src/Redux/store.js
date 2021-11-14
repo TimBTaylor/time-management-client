@@ -17,4 +17,4 @@ export const store = createStore(
   composeWithDevTools(applyMiddleware(thunk))
 );
 
-export const presistor = persistStore(store);
+export const persistor = persistStore(store);

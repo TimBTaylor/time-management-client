@@ -1,0 +1,222 @@
+.lm-container {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: translateY(25%);
+          transform: translateY(25%);
+}
+
+.get-started-timebase {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.time-base {
+  color: #05386b;
+}
+
+.intro-description {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin: 10px 0;
+}
+
+.login-fail {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #b60000;
+}
+
+.login-create-container {
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 320px;
+  max-width: 320px;
+  min-height: 300px;
+  background-color: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.user-container {
+  margin: 25px 15px 20px 15px;
+}
+
+.admin-container {
+  margin: 5px 15px 35px 15px;
+}
+
+.sign-in-create,
+.create-admin {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.google-button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 45px;
+  border-radius: 5px;
+  border: 2px solid #4f7ff0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.facebook-button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 45px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  border: 2px solid #3996e2;
+}
+
+.github-button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 45px;
+  border-radius: 5px;
+  border: none;
+  border: 2px solid #000;
+}
+
+.google-logo-container {
+  background-color: #fff;
+  width: 55px;
+}
+
+.facebook-logo-container {
+  width: 55px;
+  height: 100%;
+  background-color: #3996e2;
+}
+
+.github-logo-container {
+  width: 55px;
+  height: 100%;
+  background-color: #fff;
+}
+
+.google-logo-button,
+.facebook-logo-button,
+.github-logo-button {
+  -webkit-transform: translateY(3px);
+          transform: translateY(3px);
+}
+
+.google-login-button {
+  border: none;
+  background: #4f7ff0;
+  height: 100%;
+  width: 100%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.facebook-login-button {
+  border: none;
+  background: #3996e2;
+  height: 100%;
+  width: 100%;
+}
+
+.github-login-button {
+  border: none;
+  background: #000;
+  height: 100%;
+  width: 100%;
+  color: #fff;
+}
+
+.google-button-container:hover {
+  border: 2px solid #4372e1;
+  cursor: pointer;
+}
+
+.google-button-container:hover .google-login-button {
+  background: #4372e1;
+  cursor: pointer;
+}
+
+#or {
+  position: relative;
+  width: 300px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+
+#or::before,
+#or::after {
+  position: absolute;
+  width: 130px;
+  height: 1px;
+  top: 24px;
+  background-color: #aaa;
+  content: "";
+}
+
+#or::before {
+  left: 0;
+}
+
+#or::after {
+  right: 0;
+}
+
+.coming-soon {
+  margin: 35px 0 5px 0;
+}
+
+.more-ways {
+  font-weight: 400;
+  margin: 0 0 15px 0;
+}
+
+@media (max-width: 500px) {
+  .lm-container {
+    -webkit-transform: translateY(10%);
+            transform: translateY(10%);
+  }
+}
+/*# sourceMappingURL=LoginMain.css.map */

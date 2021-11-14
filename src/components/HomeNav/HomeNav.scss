@@ -1,57 +1,120 @@
 $blue: #05386b;
+$blueTransition: #074b8f;
 $green: #379683;
 $lightGreen: #5cdb95;
 $lighterGreen: #8ee4af;
 $lightest: #edf5e1;
+$googleButton: #4f7ff0;
+$googleTransition: #4372e1;
 
-.h-nav {
+.nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 10px 30px;
 }
 
-.brand-link {
+nav {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.brand-name {
   font-size: 1.5rem;
-  margin-right: 5px;
+  padding-top: 7px;
+  margin: 15px 0 0 0;
+  color: $blue;
+}
+
+.list {
+  list-style-type: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.items:nth-child(1) a {
   text-decoration: none;
-  color: $blue;
-  font-weight: 600;
-}
-
-.h-brand-logo {
-  margin: 0;
-  padding: 0;
-}
-
-.h-login {
   text-transform: uppercase;
-  margin-right: 30px;
-  border: none;
-  background: none;
+  font-weight: 500;
   color: $blue;
-  transition: 0.3s;
+  transition: 0.3s ease-in-out;
   &:hover {
     cursor: pointer;
     color: $green;
   }
 }
 
-.h-sign-up {
+.items:nth-child(2) a {
+  text-decoration: none;
+  font-weight: 500;
   text-transform: uppercase;
-  height: 40px;
-  width: 100px;
-  border: none;
-  background: none;
+  padding: 10px;
   border-radius: 5px;
   color: $blue;
-  border: 1px solid $green;
-  transition: 0.3s;
+  border: 1px solid $blue;
+  transition: 0.3s ease-in-out;
   &:hover {
     cursor: pointer;
-    background-color: $green;
+    background-color: $blue;
+    color: $green;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 10px,
       rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
       rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+}
+
+.items {
+  margin-right: 20px;
+}
+
+.nav-btn {
+  display: none;
+  margin-top: 23px;
+  z-index: 101;
+  right: 30px;
+}
+
+@media screen and (max-width: 600px) {
+  .nav-container {
+    display: block;
+  }
+
+  .brand-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav-btn {
+    display: block;
+  }
+
+  nav {
+    height: auto;
+    justify-content: center;
+    display: block;
+  }
+
+  .list {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid $blue;
+    width: auto;
+    z-index: 100;
+  }
+
+  .items:nth-child(1) {
+    // margin-top: 20px;
+    // margin-bottom: 30px;
+  }
+
+  .items {
+    width: 100%;
+    text-align: center;
+    // margin-right: 0;
+    // padding: 20px 0;
+    margin-bottom: 30px;
   }
 }

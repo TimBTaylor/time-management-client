@@ -10,7 +10,8 @@ $lightest: #edf5e1;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 50px 30px 0 30px;
+  margin: 0px 30px;
+  transform: translateY(25%);
 }
 
 .intro {
@@ -43,5 +44,11 @@ $lightest: #edf5e1;
   &:hover {
     cursor: pointer;
     background-color: $blueTransition;
+  }
+}
+
+@media (max-width: 500px) {
+  .home-view-container {
+    transform: translateY(10%);
   }
 }

@@ -7,6 +7,8 @@ const intitialState = {
   companyNumber: "",
   isAdmin: "",
   date: "",
+  isLoading: false,
+  error: null,
 };
 
 const userInfoReducer = (state = intitialState, action) => {
@@ -23,7 +25,21 @@ const userInfoReducer = (state = intitialState, action) => {
         isAdmin: action.payload.isAdmin,
         date: action.payload.date,
       };
-
+    case "SET_USER_INFO_REQUEST":
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case "SET_USER_INFO_SUCCESS":
+      return {
+        ...state,
+        isLoading: false,
+      };
+    case "SET_USER_INFO_ERROR":
+      return {
+        ...state,
+        error: action.error,
+      };
     default:
       return state;
   }
