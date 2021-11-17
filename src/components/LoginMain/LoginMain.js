@@ -23,7 +23,7 @@ export const LoginMain = () => {
       picture: googleData.profileObj.imageUrl,
     };
     dispatch(login(userInfo));
-    navigate("/employee/home");
+    navigate("/company-number");
   };
 
   return (

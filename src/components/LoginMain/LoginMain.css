@@ -10,8 +10,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transform: translateY(25%);
-          transform: translateY(25%);
+  margin-top: 100px;
 }
 
 .get-started-timebase {
@@ -121,7 +120,7 @@
 }
 
 .google-logo-container {
-  background-color: #fff;
+  background-color: #f000;
   width: 55px;
 }
 
@@ -134,14 +133,16 @@
 .github-logo-container {
   width: 55px;
   height: 100%;
-  background-color: #fff;
+  background-color: #000;
 }
 
 .google-logo-button,
-.facebook-logo-button,
+.facebook-logo-button {
+  margin-top: 3px;
+}
+
 .github-logo-button {
-  -webkit-transform: translateY(3px);
-          transform: translateY(3px);
+  margin-top: 7px;
 }
 
 .google-login-button {
@@ -215,8 +216,7 @@
 
 @media (max-width: 500px) {
   .lm-container {
-    -webkit-transform: translateY(10%);
-            transform: translateY(10%);
+    margin-top: 50px;
   }
 }
 /*# sourceMappingURL=LoginMain.css.map */

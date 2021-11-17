@@ -4,12 +4,16 @@ import { Home } from "./Home";
 import { Login } from "./Login";
 import { EmployeeHome } from "./EmployeeHome";
 import { AdminHome } from "./AdminHome";
+import { CompanyNum } from "./CompanyNum";
 import { useSelector } from "react-redux";
 import { LoadingAnimation } from "../components/LoadingAnimation/LoadingAnimation";
 
 export const Main = () => {
   const isLoading = useSelector((state) => state.userInfoReducer.isLoading);
   const isAdmin = useSelector((state) => state.userInfoReducer.isAdmin);
+  const companyNumber = useSelector(
+    (state) => state.userInfoReducer.companyNumber
+  );
 
   return (
     <div>
@@ -29,6 +33,19 @@ export const Main = () => {
               exact
               path="/admin/home"
               element={isAdmin > 0 ? <AdminHome /> : <EmployeeHome />}
+            />
+            <Route
+              exact
+              path="/company-number"
+              element={
+                isAdmin ? (
+                  <AdminHome />
+                ) : companyNumber ? (
+                  <EmployeeHome />
+                ) : (
+                  <CompanyNum />
+                )
+              }
             />
           </Routes>
         </Router>

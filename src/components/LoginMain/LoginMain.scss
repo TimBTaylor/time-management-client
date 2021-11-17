@@ -15,7 +15,7 @@ $error: #b60000;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transform: translateY(25%);
+  margin-top: 100px;
 }
 
 .get-started-timebase {
@@ -98,7 +98,7 @@ $error: #b60000;
 }
 
 .google-logo-container {
-  background-color: #fff;
+  background-color: #f000;
   width: 55px;
 }
 
@@ -111,13 +111,16 @@ $error: #b60000;
 .github-logo-container {
   width: 55px;
   height: 100%;
-  background-color: #fff;
+  background-color: #000;
 }
 
 .google-logo-button,
-.facebook-logo-button,
+.facebook-logo-button {
+  margin-top: 3px;
+}
+
 .github-logo-button {
-  transform: translateY(3px);
+  margin-top: 7px;
 }
 
 .google-login-button {
@@ -193,6 +196,6 @@ $error: #b60000;
 
 @media (max-width: 500px) {
   .lm-container {
-    transform: translateY(10%);
+    margin-top: 50px;
   }
 }
