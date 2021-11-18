@@ -8,16 +8,18 @@ import { store, persistor } from "./redux/store";
 
 function App() {
   return (
-    <>
-      <div className="App">
-        <Provider store={store}>
-          <PersistGate loading={null} persistor={persistor}>
-            <Main />
-          </PersistGate>
-        </Provider>
-      </div>
+    <div className="App">
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <div className="page-container">
+            <div className="content-wrap">
+              <Main />
+            </div>
+          </div>
+        </PersistGate>
+      </Provider>
       <Footer />
-    </>
+    </div>
   );
 }
 

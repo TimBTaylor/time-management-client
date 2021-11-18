@@ -1,0 +1,63 @@
+$blue: #05386b;
+$blueTransition: #074b8f;
+$green: #379683;
+$lightGreen: #5cdb95;
+$lighterGreen: #8ee4af;
+$error: #b60000;
+
+.company-number {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+  text-align: center;
+  h1 {
+    margin-bottom: 15px;
+  }
+  p {
+    margin-bottom: 60px;
+  }
+  button {
+    margin-top: 75px;
+    border: none;
+    background-color: $blue;
+    padding: 15px 80px;
+    border-radius: 20px;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      cursor: pointer;
+      background-color: $blueTransition;
+    }
+  }
+}
+
+.invalid-code {
+  color: $error;
+  font-weight: 600;
+}
+
+.digits {
+  display: flex;
+  align-items: center;
+  input {
+    text-align: center;
+    font-size: 2.2rem;
+    margin: 0 10px;
+    width: 40px;
+    height: 60px;
+    border-radius: 5px;
+    border: 1px solid $green;
+    &:focus {
+      border: 1px solid $blue;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .digits input {
+    width: 30px;
+    height: 50px;
+    font-size: 2rem;
+  }
+}

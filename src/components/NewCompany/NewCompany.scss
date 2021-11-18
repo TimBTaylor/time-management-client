@@ -1,0 +1,67 @@
+$blue: #05386b;
+$blueTransition: #074b8f;
+$green: #379683;
+$lightGreen: #5cdb95;
+$lighterGreen: #8ee4af;
+$error: #b60000;
+
+.new-company-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+  }
+  h1 {
+    margin-top: 25px;
+  }
+  span {
+    font-weight: 400;
+  }
+  .nc-name {
+    font-weight: 600;
+    color: $blue;
+  }
+  div {
+    text-align: start;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    label {
+      margin: 20px 0 5px 0;
+      font-weight: 500;
+    }
+    .company-input {
+      margin-top: 0;
+    }
+    input {
+      font-size: 1.1rem;
+      width: 300px;
+      height: 40px;
+      padding: 5px;
+      border-radius: 5px;
+      &:focus {
+        outline: none;
+        border: 2px solid $blue;
+      }
+    }
+  }
+  button {
+    margin-top: 45px;
+    border: none;
+    background-color: $blue;
+    padding: 15px 80px;
+    border-radius: 20px;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      cursor: pointer;
+      background-color: $blueTransition;
+    }
+  }
+}

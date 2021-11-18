@@ -5,6 +5,7 @@ import { Login } from "./Login";
 import { EmployeeHome } from "./EmployeeHome";
 import { AdminHome } from "./AdminHome";
 import { CompanyNum } from "./CompanyNum";
+import { CreateCompany } from "./CreateCompany";
 import { useSelector } from "react-redux";
 import { LoadingAnimation } from "../components/LoadingAnimation/LoadingAnimation";
 
@@ -14,6 +15,7 @@ export const Main = () => {
   const companyNumber = useSelector(
     (state) => state.userInfoReducer.companyNumber
   );
+  const alreadyUser = useSelector((state) => state.errorsReducer.alreadyUser);
 
   return (
     <div>
@@ -46,6 +48,11 @@ export const Main = () => {
                   <CompanyNum />
                 )
               }
+            />
+            <Route
+              exact
+              path="/create-company"
+              element={alreadyUser ? <Login /> : <CreateCompany />}
             />
           </Routes>
         </Router>

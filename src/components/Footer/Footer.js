@@ -7,7 +7,7 @@ import "./Footer.css";
 
 export const Footer = () => {
   return (
-    <>
+    <div className="footer-container">
       <hr className="footer-linebreak" />
       <div className="footer">
         <div className="github-container">
@@ -36,7 +36,7 @@ export const Footer = () => {
           </a>
         </div>
       </div>
-      <p>&copy;{new Date().getFullYear()} Tim Taylor</p>
-    </>
+      <p className="footer-p">&copy;{new Date().getFullYear()} Tim Taylor</p>
+    </div>
   );
 };

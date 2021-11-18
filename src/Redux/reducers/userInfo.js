@@ -9,6 +9,7 @@ const intitialState = {
   date: "",
   isLoading: false,
   error: null,
+  invalidCode: false,
 };
 
 const userInfoReducer = (state = intitialState, action) => {
@@ -39,6 +40,11 @@ const userInfoReducer = (state = intitialState, action) => {
       return {
         ...state,
         error: action.error,
+      };
+    case "SET_USER_COMPANY_NUMBER":
+      return {
+        ...state,
+        companyNumber: action.payload,
       };
     default:
       return state;
