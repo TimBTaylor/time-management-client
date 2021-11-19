@@ -15,8 +15,6 @@ export const addCompany = (userInfo) => async (dispatch) => {
         tableName: userInfo.tableName,
       },
     }).then((response) => {
-      console.log(userInfo.companyNumber);
-      console.log(response);
       if (response.data === "Users company updated") {
         dispatch({
           type: "SET_USER_COMPANY_NUMBER",

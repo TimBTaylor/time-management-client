@@ -1,20 +1,11 @@
 const initialState = {
   invalidCode: false,
-  alreadyUser: false,
+  companyCreated: true,
+  companyCreatdError: null,
 };
 
 const errorsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "ALREADY_USER":
-      return {
-        ...state,
-        alreadyUser: true,
-      };
-    case "NOT_USER":
-      return {
-        ...state,
-        alreadyUser: false,
-      };
     case "SET_USER_INVALID_CODE":
       return {
         ...state,
@@ -24,6 +15,16 @@ const errorsReducer = (state = initialState, action) => {
       return {
         ...state,
         invalidCode: false,
+      };
+    case "CREATE_COMPANY_SUCCESS":
+      return {
+        ...state,
+        companyCreated: true,
+      };
+    case "CREATE_COMPANY_FAIL":
+      return {
+        ...state,
+        companyCreated: false,
       };
     default:
       return state;

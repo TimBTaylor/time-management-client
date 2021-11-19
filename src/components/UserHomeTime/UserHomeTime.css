@@ -1,0 +1,36 @@
+.user-home-time-container .weekly-time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 40px;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.user-home-time-container .weekly-time div {
+  width: 100px;
+  min-width: 60px;
+  height: 50px;
+  margin: 0 5px;
+  border-radius: 10px;
+  padding: 0 5px 3px 5px;
+  background-color: #8ee4af;
+}
+
+.user-home-time-container .weekly-time div p:nth-child(1) {
+  text-align: center;
+  margin: 7px 0;
+  font-weight: bold;
+  color: #05386b;
+}
+
+.user-home-time-container .weekly-time div p:nth-child(2) {
+  font-size: 0.8rem;
+  margin: 0;
+  font-weight: 500;
+}
+/*# sourceMappingURL=UserHomeTime.css.map */

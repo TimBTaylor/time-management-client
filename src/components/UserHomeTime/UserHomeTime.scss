@@ -1,0 +1,38 @@
+$blue: #05386b;
+$blueTransition: #074b8f;
+$green: #379683;
+$lightGreen: #5cdb95;
+$lighterGreen: #8ee4af;
+$lightest: #edf5e1;
+$googleButton: #4f7ff0;
+$googleTransition: #4372e1;
+
+.user-home-time-container {
+  .weekly-time {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    div {
+      width: 100px;
+      min-width: 60px;
+      height: 50px;
+      margin: 0 5px;
+      border-radius: 10px;
+      padding: 0 5px 3px 5px;
+      background-color: $lighterGreen;
+      p:nth-child(1) {
+        text-align: center;
+        margin: 7px 0;
+        font-weight: bold;
+        color: $blue;
+      }
+      p:nth-child(2) {
+        font-size: 0.8rem;
+        margin: 0;
+        font-weight: 500;
+      }
+    }
+  }
+}

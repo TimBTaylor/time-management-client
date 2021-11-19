@@ -18,9 +18,6 @@ export const createAdmin = (userInfo) => async (dispatch) => {
     }).then((response) => {
       if (response.status === 201) {
         dispatch({
-          type: "NOT_USER",
-        });
-        dispatch({
           type: "SET_USER_INFO",
           payload: {
             firstName: response.data.first_name,
@@ -35,8 +32,18 @@ export const createAdmin = (userInfo) => async (dispatch) => {
         });
       } else if (response.status === 200) {
         dispatch({
-          type: "ALREADY_USER",
+          type: "SET_USER_IMAGE",
+          payload: userInfo.picture,
         });
+        if (response.data.isAdmin) {
+          dispatch({
+            type: "SET_USER_IS_ADMIN",
+          });
+        } else {
+          dispatch({
+            type: "SET_USER_IS_NOT_ADMIN",
+          });
+        }
       } else {
         dispatch({
           type: "SET_USER_INFO_ERROR",

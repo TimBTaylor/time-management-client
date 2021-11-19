@@ -5,11 +5,11 @@ const intitialState = {
   image: "",
   userId: "",
   companyNumber: "",
+  companyName: "",
   isAdmin: "",
   date: "",
   isLoading: false,
   error: null,
-  invalidCode: false,
 };
 
 const userInfoReducer = (state = intitialState, action) => {
@@ -45,6 +45,26 @@ const userInfoReducer = (state = intitialState, action) => {
       return {
         ...state,
         companyNumber: action.payload,
+      };
+    case "SET_USER_COMPANY_NAME":
+      return {
+        ...state,
+        companyName: action.payload,
+      };
+    case "SET_USER_IS_ADMIN":
+      return {
+        ...state,
+        isAdmin: 1,
+      };
+    case "SET_USER_IS_NOT_ADMIN":
+      return {
+        ...state,
+        isAdmin: 0,
+      };
+    case "SET_USER_IMAGE":
+      return {
+        ...state,
+        image: action.payload,
       };
     default:
       return state;

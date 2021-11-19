@@ -34,6 +34,11 @@
   color: #05386b;
 }
 
+.new-company-container p {
+  color: #b60000;
+  font-weight: 600;
+}
+
 .new-company-container div {
   text-align: start;
   margin-top: 50px;
@@ -47,6 +52,14 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.new-company-container div p {
+  text-align: center;
+  margin-bottom: 35px;
 }
 
 .new-company-container div label {
@@ -61,7 +74,7 @@
 .new-company-container div input {
   font-size: 1.1rem;
   width: 300px;
-  height: 40px;
+  height: 20px;
   padding: 5px;
   border-radius: 5px;
 }

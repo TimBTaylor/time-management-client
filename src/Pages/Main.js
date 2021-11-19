@@ -15,7 +15,6 @@ export const Main = () => {
   const companyNumber = useSelector(
     (state) => state.userInfoReducer.companyNumber
   );
-  const alreadyUser = useSelector((state) => state.errorsReducer.alreadyUser);
 
   return (
     <div>
@@ -34,15 +33,29 @@ export const Main = () => {
             <Route
               exact
               path="/admin/home"
-              element={isAdmin > 0 ? <AdminHome /> : <EmployeeHome />}
+              element={
+                isAdmin > 0 ? (
+                  companyNumber !== null ? (
+                    <AdminHome />
+                  ) : (
+                    <CreateCompany />
+                  )
+                ) : (
+                  <EmployeeHome />
+                )
+              }
             />
             <Route
               exact
               path="/company-number"
               element={
                 isAdmin ? (
-                  <AdminHome />
-                ) : companyNumber ? (
+                  companyNumber !== null ? (
+                    <AdminHome />
+                  ) : (
+                    <CreateCompany />
+                  )
+                ) : companyNumber !== null ? (
                   <EmployeeHome />
                 ) : (
                   <CompanyNum />
@@ -52,7 +65,17 @@ export const Main = () => {
             <Route
               exact
               path="/create-company"
-              element={alreadyUser ? <Login /> : <CreateCompany />}
+              element={
+                isAdmin ? (
+                  companyNumber === null ? (
+                    <CreateCompany />
+                  ) : (
+                    <Login />
+                  )
+                ) : (
+                  <Login />
+                )
+              }
             />
           </Routes>
         </Router>

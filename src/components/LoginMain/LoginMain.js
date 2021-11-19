@@ -13,7 +13,7 @@ export const LoginMain = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const loginFail = useSelector((state) => state.userInfoReducer.error);
+  const loginFail = useSelector((state) => state.errorsReducer.error);
 
   const handleLogin = (googleData) => {
     const userInfo = {

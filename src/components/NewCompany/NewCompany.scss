@@ -26,12 +26,21 @@ $error: #b60000;
     font-weight: 600;
     color: $blue;
   }
+  p {
+    color: $error;
+    font-weight: 600;
+  }
   div {
     text-align: start;
     margin-top: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    p {
+      text-align: center;
+      margin-bottom: 35px;
+    }
     label {
       margin: 20px 0 5px 0;
       font-weight: 500;
@@ -42,7 +51,7 @@ $error: #b60000;
     input {
       font-size: 1.1rem;
       width: 300px;
-      height: 40px;
+      height: 20px;
       padding: 5px;
       border-radius: 5px;
       &:focus {
