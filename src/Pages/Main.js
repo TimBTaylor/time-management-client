@@ -6,6 +6,7 @@ import { EmployeeHome } from "./EmployeeHome";
 import { AdminHome } from "./AdminHome";
 import { CompanyNum } from "./CompanyNum";
 import { CreateCompany } from "./CreateCompany";
+import { TimeCard } from "./TimeCard";
 import { useSelector } from "react-redux";
 import { LoadingAnimation } from "../components/LoadingAnimation/LoadingAnimation";
 
@@ -77,6 +78,7 @@ export const Main = () => {
                 )
               }
             />
+            <Route exact path="/new-time-card" element={<TimeCard />} />
           </Routes>
         </Router>
       )}

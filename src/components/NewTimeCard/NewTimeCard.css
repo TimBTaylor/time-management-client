@@ -1,0 +1,70 @@
+.new-time-card-container {
+  text-align: center;
+}
+
+.new-time-card-container h1 {
+  color: #05386b;
+}
+
+.new-time-card-container div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.new-time-card-container div input {
+  height: 35px;
+  width: 200px;
+  margin: 10px;
+  border-radius: 5px;
+  border: 1px solid #05386b;
+}
+
+.new-time-card-container div input:focus {
+  outline: none;
+  border: 3px solid #05386b;
+}
+
+.new-time-card-container div .notes {
+  padding-bottom: 80px;
+}
+
+.new-time-card-container div select {
+  height: 35px;
+  width: 204px;
+  margin: 10px;
+  border-radius: 5px;
+  border: 1px solid #05386b;
+}
+
+.new-time-card-container div select:focus {
+  outline: none;
+  border: 3px solid #05386b;
+}
+
+.new-time-card-container div button {
+  height: 40px;
+  width: 200px;
+  background-color: #05386b;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  margin-top: 30px;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.new-time-card-container div button:hover {
+  background-color: #074b8f;
+  cursor: pointer;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 10px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 10px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+/*# sourceMappingURL=NewTimeCard.css.map */

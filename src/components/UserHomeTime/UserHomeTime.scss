@@ -8,15 +8,18 @@ $googleButton: #4f7ff0;
 $googleTransition: #4372e1;
 
 .user-home-time-container {
+  display: flex;
+  flex-direction: column;
   .weekly-time {
-    display: flex;
-    justify-content: center;
+    // align-self: center;
+    text-align: center;
     margin-top: 40px;
-    flex-wrap: nowrap;
+    white-space: nowrap;
     overflow-x: auto;
     div {
+      display: inline-block;
       width: 100px;
-      min-width: 60px;
+      min-width: 80px;
       height: 50px;
       margin: 0 5px;
       border-radius: 10px;
@@ -33,6 +36,73 @@ $googleTransition: #4372e1;
         margin: 0;
         font-weight: 500;
       }
+    }
+  }
+  .total-hours-container {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 100px;
+    height: 100px;
+    width: 200px;
+    border-radius: 10px;
+    border: 1px solid $blue;
+    p:nth-child(1) {
+      font-size: 2.5rem;
+      margin-top: 19px;
+      margin-bottom: 0;
+    }
+    p:nth-child(2) {
+      font-size: 0.8rem;
+    }
+  }
+  button {
+    align-self: center;
+    width: 250px;
+    margin-top: 50px;
+    height: 45px;
+    border-radius: 10px;
+    background-color: $blue;
+    border: none;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    color: #fff;
+    &:hover {
+      cursor: pointer;
+      background-color: $blueTransition;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 10px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+  }
+  .new-time-card {
+    margin-top: 40px;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    a {
+      text-align: center;
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      font-size: 2.5rem;
+      color: #fff;
+      background-color: $blue;
+      transition: 0.3s ease-in-out;
+      &:hover {
+        cursor: pointer;
+        background-color: $blueTransition;
+      }
+      svg {
+        margin-top: 10px;
+      }
+    }
+    p {
+      margin: 5px;
+      font-weight: 600;
     }
   }
 }

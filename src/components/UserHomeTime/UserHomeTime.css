@@ -1,19 +1,24 @@
-.user-home-time-container .weekly-time {
+.user-home-time-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.user-home-time-container .weekly-time {
+  text-align: center;
   margin-top: 40px;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  white-space: nowrap;
   overflow-x: auto;
 }
 
 .user-home-time-container .weekly-time div {
+  display: inline-block;
   width: 100px;
-  min-width: 60px;
+  min-width: 80px;
   height: 50px;
   margin: 0 5px;
   border-radius: 10px;
@@ -32,5 +37,101 @@
   font-size: 0.8rem;
   margin: 0;
   font-weight: 500;
+}
+
+.user-home-time-container .total-hours-container {
+  -ms-flex-item-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  margin-top: 100px;
+  height: 100px;
+  width: 200px;
+  border-radius: 10px;
+  border: 1px solid #05386b;
+}
+
+.user-home-time-container .total-hours-container p:nth-child(1) {
+  font-size: 2.5rem;
+  margin-top: 19px;
+  margin-bottom: 0;
+}
+
+.user-home-time-container .total-hours-container p:nth-child(2) {
+  font-size: 0.8rem;
+}
+
+.user-home-time-container button {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 250px;
+  margin-top: 50px;
+  height: 45px;
+  border-radius: 10px;
+  background-color: #05386b;
+  border: none;
+  font-weight: 600;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  color: #fff;
+}
+
+.user-home-time-container button:hover {
+  cursor: pointer;
+  background-color: #074b8f;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 10px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 10px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.user-home-time-container .new-time-card {
+  margin-top: 40px;
+  -ms-flex-item-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.user-home-time-container .new-time-card a {
+  text-align: center;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  font-size: 2.5rem;
+  color: #fff;
+  background-color: #05386b;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.user-home-time-container .new-time-card a:hover {
+  cursor: pointer;
+  background-color: #074b8f;
+}
+
+.user-home-time-container .new-time-card a svg {
+  margin-top: 10px;
+}
+
+.user-home-time-container .new-time-card p {
+  margin: 5px;
+  font-weight: 600;
 }
 /*# sourceMappingURL=UserHomeTime.css.map */

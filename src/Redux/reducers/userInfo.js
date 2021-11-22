@@ -8,6 +8,10 @@ const intitialState = {
   companyName: "",
   isAdmin: "",
   date: "",
+  weeklyTimeEntries: [],
+  entriesToDisplay: [],
+  weeklyTime: "",
+  jobs: [],
   isLoading: false,
   error: null,
 };
@@ -65,6 +69,26 @@ const userInfoReducer = (state = intitialState, action) => {
       return {
         ...state,
         image: action.payload,
+      };
+    case "SET_USER_WEEKLY_TIME":
+      return {
+        ...state,
+        weeklyTimeEntries: action.payload,
+      };
+    case "SET_USER_TOTAL_TIME":
+      return {
+        ...state,
+        weeklyTime: action.payload,
+      };
+    case "SET_USER_DISPLAY_ENTRIES":
+      return {
+        ...state,
+        entriesToDisplay: action.payload,
+      };
+    case "SET_USER_JOBS":
+      return {
+        ...state,
+        jobs: action.payload,
       };
     default:
       return state;
