@@ -47,7 +47,7 @@ export const UserHomeTime = () => {
       <div className="weekly-time">
         {entriesToDisplay.map((entry) => {
           return (
-            <div key={entry.date}>
+            <div key={entriesToDisplay.indexOf(entry)}>
               <p>
                 {entry.hours}:{entry.minutes}
               </p>

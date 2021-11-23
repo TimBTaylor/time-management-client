@@ -1,6 +1,8 @@
 import axios from "axios";
+import { startOfWeek } from "date-fns";
 
 export const weeklyTimeEntries = (userInfo) => async (dispatch) => {
+  const weekStart = startOfWeek(new Date());
   try {
     await axios({
       method: "post",
@@ -35,30 +37,51 @@ export const weeklyTimeEntries = (userInfo) => async (dispatch) => {
         });
         // display entries
         let display = [];
-        let curr = new Date();
         let week = [];
-
         for (let i = 0; i <= 6; i++) {
-          let first = curr.getDate() - curr.getDay() + i;
-          let day = new Date(curr.setDate(first)).toISOString().slice(0, 10);
+          let first = weekStart.getDate() - weekStart.getDay() + i;
+          let day = new Date(weekStart.setDate(first))
+            .toISOString()
+            .slice(0, 10);
           week.push(day);
         }
 
-        let marker = 0;
         week.map((date) => {
-          marker += 1;
           response.data.map((entry) => {
+            const newEntry = {
+              hours: entry.hours >= 10 ? entry.hours : "0" + entry.hours,
+              minutes: entry.minutes === 30 ? entry.minutes : "00",
+              date: entry.date.substring(5) + "-" + entry.date.substring(0, 4),
+            };
             if (date === entry.date) {
-              display.push({
-                hours: entry.hours >= 10 ? entry.hours : "0" + entry.hours,
-                minutes: entry.minutes === 30 ? entry.minutes : "00",
-                date:
-                  entry.date.substring(5) + "-" + entry.date.substring(0, 4),
-              });
+              let equalDates = display.filter(
+                (entry) => entry.date === newEntry.date
+              );
+              if (equalDates.length > 0) {
+                let updatedHours =
+                  Number(equalDates[0].hours) + Number(newEntry.hours);
+                let updatedMinutes =
+                  Number(equalDates[0].minutes) + Number(newEntry.minutes);
+                let updatedTotalTimeInMinutes =
+                  updatedHours * 60 + updatedMinutes;
+                let hours = Math.trunc(updatedTotalTimeInMinutes / 60);
+                let minutes = updatedTotalTimeInMinutes % 60;
+                const updatedEntry = {
+                  hours: hours >= 10 ? hours : "0" + hours,
+                  minutes: minutes === 30 ? minutes : "00",
+                  date: newEntry.date,
+                };
+                display.splice(display.indexOf(equalDates[0]), 1);
+                display.push(updatedEntry);
+              } else {
+                display.push(newEntry);
+              }
             }
             return entry;
           });
-          if (marker !== display.length) {
+          let reversedDate = date.substring(5) + "-" + date.substring(0, 4);
+          let equalDates = display.some((entry) => entry.date === reversedDate);
+          if (equalDates <= 0) {
             display.push({
               hours: "00",
               minutes: "00",

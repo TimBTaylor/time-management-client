@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { allJobs } from "../../redux/actions/allJobs";
 import axios from "axios";
+import { TimeEntryModal } from "../TimeEntryModal/TimeEntryModal";
 
 import "./NewTimeCard.css";
 
 export const NewTimeCard = () => {
+  const ref = useRef();
   const dispatch = useDispatch();
   const [defaultHours] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
   const [date, setDate] = useState();
@@ -13,6 +15,7 @@ export const NewTimeCard = () => {
   const [hours, setHours] = useState();
   const [minutes, setMinutes] = useState();
   const [notes, setNotes] = useState();
+  const [popup, setPopup] = useState(true);
 
   const isAdmin = useSelector((state) => state.userInfoReducer.isAdmin);
   const userId = useSelector((state) => state.userInfoReducer.userId);
@@ -20,8 +23,8 @@ export const NewTimeCard = () => {
     (state) => state.userInfoReducer.companyNumber
   );
   const jobs = useSelector((state) => state.userInfoReducer.jobs);
+
   const handleSubmit = async () => {
-    //has not been test, create a popup saying time has been submitted or that it hasnt
     try {
       await axios({
         method: "post",
@@ -37,6 +40,10 @@ export const NewTimeCard = () => {
           companyNumber,
           date,
         },
+      }).then((response) => {
+        if (response.status === 201) {
+          setPopup(true);
+        }
       });
     } catch (error) {
       console.log(error);
@@ -45,54 +52,65 @@ export const NewTimeCard = () => {
 
   useEffect(() => {
     dispatch(allJobs(companyNumber));
-  });
+
+    const ifClickedOutside = (e) => {
+      if (!ref.current.contains(e.target)) {
+        setPopup(false);
+      }
+    };
+
+    document.addEventListener("mousedown", ifClickedOutside);
+
+    //add the remove add event listener
+  }, [companyNumber, dispatch]);
 
   return (
-    <div className="new-time-card-container">
-      <h1>Add Entry</h1>
-      <form>
-        <div>
-          <input
-            type="date"
-            required
-            onChange={(e) => setDate(e.target.value)}
-          />
-          <select required onChange={(e) => setJobName(e.target.value)}>
-            <option value="">Select Job</option>
-            {jobs.map((job) => {
-              return (
-                <option key={job.id} value={job.job_name}>
-                  {job.job_po} - {job.job_name}
-                </option>
-              );
-            })}
-          </select>
-          <select required onChange={(e) => setHours(e.target.value)}>
-            <option value="">Select Hours</option>
-            {defaultHours.map((hour) => {
-              return (
-                <option key={hour} value={hour}>
-                  {hour}
-                </option>
-              );
-            })}
-          </select>
-          <select required onChange={(e) => setMinutes(e.target.value)}>
-            <option value="">Select Minutes</option>
-            <option value="00">00</option>
-            <option value="30">30</option>
-          </select>
-          <input
-            className="notes"
-            type="text"
-            placeholder="Time Entry Notes"
-            onChange={(e) => setNotes(e.target.value)}
-          />
-          <button type="submit" value="submit" onClick={handleSubmit}>
-            SAVE
-          </button>
-        </div>
-      </form>
-    </div>
+    <>
+      {popup ? <TimeEntryModal /> : ""}
+      <div ref={ref} className="new-time-card-container">
+        <h1>Add Entry</h1>
+        <form>
+          <div>
+            <input
+              type="date"
+              required
+              onChange={(e) => setDate(e.target.value)}
+            />
+            <select required onChange={(e) => setJobName(e.target.value)}>
+              <option value="">Select Job</option>
+              {jobs.map((job) => {
+                return (
+                  <option key={job.id} value={job.job_name}>
+                    {job.job_po} - {job.job_name}
+                  </option>
+                );
+              })}
+            </select>
+            <select required onChange={(e) => setHours(e.target.value)}>
+              <option value="">Select Hours</option>
+              {defaultHours.map((hour) => {
+                return (
+                  <option key={hour} value={hour}>
+                    {hour}
+                  </option>
+                );
+              })}
+            </select>
+            <select required onChange={(e) => setMinutes(e.target.value)}>
+              <option value="">Select Minutes</option>
+              <option value="00">00</option>
+              <option value="30">30</option>
+            </select>
+            <input
+              className="notes"
+              type="text"
+              placeholder="Time Entry Notes"
+              onChange={(e) => setNotes(e.target.value)}
+            />
+          </div>
+        </form>
+        <button onClick={handleSubmit}>SAVE</button>
+      </div>
+    </>
   );
 };
