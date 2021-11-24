@@ -15,7 +15,7 @@ export const NewTimeCard = () => {
   const [hours, setHours] = useState();
   const [minutes, setMinutes] = useState();
   const [notes, setNotes] = useState();
-  const [popup, setPopup] = useState(true);
+  const [popup, setPopup] = useState(false);
 
   const isAdmin = useSelector((state) => state.userInfoReducer.isAdmin);
   const userId = useSelector((state) => state.userInfoReducer.userId);
@@ -61,13 +61,21 @@ export const NewTimeCard = () => {
 
     document.addEventListener("mousedown", ifClickedOutside);
 
-    //add the remove add event listener
+    return () => {
+      // Cleanup the event listener
+      document.removeEventListener("mousedown", ifClickedOutside);
+    };
   }, [companyNumber, dispatch]);
 
   return (
     <>
       {popup ? <TimeEntryModal /> : ""}
-      <div ref={ref} className="new-time-card-container">
+      <div
+        ref={ref}
+        className={
+          popup ? "new-time-card-container popup" : "new-time-card-container"
+        }
+      >
         <h1>Add Entry</h1>
         <form>
           <div>
@@ -76,11 +84,16 @@ export const NewTimeCard = () => {
               required
               onChange={(e) => setDate(e.target.value)}
             />
-            <select required onChange={(e) => setJobName(e.target.value)}>
+            <select
+              required
+              onChange={(e) => {
+                setJobName(e.target.value);
+              }}
+            >
               <option value="">Select Job</option>
               {jobs.map((job) => {
                 return (
-                  <option key={job.id} value={job.job_name}>
+                  <option key={job.job_po} value={job.job_name}>
                     {job.job_po} - {job.job_name}
                   </option>
                 );

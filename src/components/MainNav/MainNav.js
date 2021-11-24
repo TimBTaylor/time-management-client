@@ -4,6 +4,7 @@ import hamburgerNav from "../../images/hamburger-menu.svg";
 import { RiHome2Line } from "react-icons/ri";
 import { CgProfile } from "react-icons/cg";
 import { HiOutlineLogout } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 import "./MainNav.css";
 
@@ -43,14 +44,14 @@ export const MainNav = () => {
         {(toggleMenu || screenWidth > 600) && (
           <ul className="list">
             <li className="items">
-              <a href="/employee/home">
+              <Link to="/employee/home">
                 <RiHome2Line />
-              </a>
+              </Link>
             </li>
             <li className="items">
-              <a href="#">
+              <Link to="/employee/profile">
                 <CgProfile />
-              </a>
+              </Link>
             </li>
             <li className="items">
               <a href="#">

@@ -9,6 +9,7 @@ import { CreateCompany } from "./CreateCompany";
 import { TimeCard } from "./TimeCard";
 import { useSelector } from "react-redux";
 import { LoadingAnimation } from "../components/LoadingAnimation/LoadingAnimation";
+import { EmployeeProfile } from "./EmployeeProfile";
 
 export const Main = () => {
   const isLoading = useSelector((state) => state.userInfoReducer.isLoading);
@@ -79,6 +80,11 @@ export const Main = () => {
               }
             />
             <Route exact path="/new-time-card" element={<TimeCard />} />
+            <Route
+              exact
+              path="/employee/profile"
+              element={<EmployeeProfile />}
+            />
           </Routes>
         </Router>
       )}

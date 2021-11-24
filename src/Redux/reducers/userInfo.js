@@ -10,6 +10,7 @@ const intitialState = {
   date: "",
   weeklyTimeEntries: [],
   entriesToDisplay: [],
+  allEntries: [],
   weeklyTime: "",
   jobs: [],
   isLoading: false,
@@ -89,6 +90,11 @@ const userInfoReducer = (state = intitialState, action) => {
       return {
         ...state,
         jobs: action.payload,
+      };
+    case "SET_USER_ALL_ENTRIES":
+      return {
+        ...state,
+        allEntries: action.payload,
       };
     default:
       return state;

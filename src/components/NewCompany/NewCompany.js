@@ -40,7 +40,7 @@ export const NewCompany = () => {
     if (companyName.length >= 2) {
       dispatch(createCompany(companyInfo));
       dispatch(addCompany(updateCompanyNumber));
-      navigate("/admin/home");
+      navigate("/employee/home");
     } else {
       setInvalidCompanyName(true);
     }

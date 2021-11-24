@@ -30,6 +30,9 @@ export const weeklyTimeEntries = (userInfo) => async (dispatch) => {
         let hoursToMinutes = totalWeeklyHours * 60 + totalWeeklyMinutes;
         let hours = Math.trunc(hoursToMinutes / 60);
         let minutes = hoursToMinutes % 60;
+        hours = hours > 1 ? hours : "00";
+        hours = hours >= 10 ? hours : "0" + hours;
+        minutes = minutes > 30 ? minutes : "00";
         let totalTime = hours + ":" + minutes;
         dispatch({
           type: "SET_USER_TOTAL_TIME",
