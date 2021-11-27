@@ -18,9 +18,7 @@ export const UserHomeTime = () => {
   const userID = useSelector((state) => state.userInfoReducer.userId);
   const isAdmin = useSelector((state) => state.userInfoReducer.isAdmin);
   let totalTime = useSelector((state) => state.userInfoReducer.weeklyTime);
-  if (totalTime.length === 4) {
-    totalTime = totalTime + "0";
-  }
+
   let typeOfId = isAdmin ? "admin_id" : "user_id";
 
   function getMonday() {

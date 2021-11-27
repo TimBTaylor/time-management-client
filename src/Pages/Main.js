@@ -10,6 +10,7 @@ import { TimeCard } from "./TimeCard";
 import { useSelector } from "react-redux";
 import { LoadingAnimation } from "../components/LoadingAnimation/LoadingAnimation";
 import { EmployeeProfile } from "./EmployeeProfile";
+import { AdminProfile } from "./AdminProfile";
 
 export const Main = () => {
   const isLoading = useSelector((state) => state.userInfoReducer.isLoading);
@@ -83,7 +84,7 @@ export const Main = () => {
             <Route
               exact
               path="/employee/profile"
-              element={<EmployeeProfile />}
+              element={isAdmin ? <AdminProfile /> : <EmployeeProfile />}
             />
           </Routes>
         </Router>

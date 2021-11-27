@@ -24,7 +24,8 @@ export const NewTimeCard = () => {
   );
   const jobs = useSelector((state) => state.userInfoReducer.jobs);
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
       await axios({
         method: "post",
@@ -114,15 +115,15 @@ export const NewTimeCard = () => {
               <option value="00">00</option>
               <option value="30">30</option>
             </select>
-            <input
+            <textarea
               className="notes"
               type="text"
               placeholder="Time Entry Notes"
               onChange={(e) => setNotes(e.target.value)}
             />
           </div>
+          <button onClick={(e) => handleSubmit(e)}>SAVE</button>
         </form>
-        <button onClick={handleSubmit}>SAVE</button>
       </div>
     </>
   );

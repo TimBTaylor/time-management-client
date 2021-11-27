@@ -1,0 +1,73 @@
+.employee-profile-time-container {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 50px;
+}
+
+.employee-profile-time-container div {
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.employee-profile-time-container table {
+  border-collapse: collapse;
+  margin-left: 20px;
+}
+
+.employee-profile-time-container th {
+  min-width: 120px;
+  border: 1px solid black;
+}
+
+.employee-profile-time-container th:nth-child(5) {
+  outline: none;
+}
+
+.employee-profile-time-container tr {
+  height: 35px;
+}
+
+.employee-profile-time-container td {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.employee-profile-time-container td button {
+  background: none;
+  border: none;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+.employee-profile-time-container td button:hover {
+  cursor: pointer;
+  background-color: #05386b;
+  color: #fff;
+}
+
+.employee-profile-time-container td:nth-child(1) {
+  border-left: 1px solid black;
+}
+
+.employee-profile-time-container td:nth-child(5) {
+  border-right: 1px solid black;
+  max-width: 200px;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.employee-profile-time-container td:nth-child(6) {
+  border: none;
+}
+
+@media (max-width: 500px) {
+  table {
+    margin-left: 0;
+  }
+}
+/*# sourceMappingURL=EmployeeProfileTime.css.map */

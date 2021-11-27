@@ -29,8 +29,20 @@ $error: #b60000;
         border: 3px solid $blue;
       }
     }
+    textarea {
+      width: 200px;
+      height: 80px;
+      border-radius: 5px;
+      border: 1px solid $blue;
+      &:focus {
+        outline: none;
+        border: 2px solid $blue;
+      }
+    }
     .notes {
       padding-bottom: 80px;
+      word-wrap: break-word;
+      word-break: break-all;
     }
     select {
       height: 35px;

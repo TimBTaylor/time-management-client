@@ -11,9 +11,13 @@ export const allEntries = (userInfo) => async (dispatch) => {
       header: { "Content-Type": "applicaton/json" },
     }).then((response) => {
       if (response.status === 200) {
+        let sortedEntries = response.data.sort(function (a, b) {
+          return new Date(b.date) - new Date(a.date);
+        });
+
         dispatch({
           type: "SET_USER_ALL_ENTRIES",
-          payload: response.data,
+          payload: sortedEntries,
         });
       }
     });

@@ -1,0 +1,94 @@
+.admin-profile-time {
+  text-align: center;
+}
+
+.admin-profile-time .admin-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 25px;
+}
+
+.admin-profile-time .admin-buttons button {
+  width: 180px;
+  height: 40px;
+  margin: 20px;
+  background-color: #fff;
+  border: 1px solid #05386b;
+  border-radius: 40px;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.admin-profile-time .admin-buttons button:hover {
+  cursor: pointer;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 10px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 10px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.admin-profile-time .admin-buttons button.active {
+  background-color: #05386b;
+  border: none;
+  color: #fff;
+}
+
+.admin-profile-time .all-time-container {
+  white-space: nowrap;
+  overflow-x: auto;
+  margin-top: 50px;
+}
+
+.admin-profile-time table {
+  border-collapse: collapse;
+  margin-left: 20px;
+}
+
+.admin-profile-time table th {
+  min-width: 120px;
+  border: 1px solid black;
+}
+
+.admin-profile-time table th:nth-child(6) {
+  outline: none;
+}
+
+.admin-profile-time table tr {
+  height: 35px;
+}
+
+.admin-profile-time table td {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.admin-profile-time table td button {
+  background: none;
+  border: none;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+.admin-profile-time table td button:hover {
+  cursor: pointer;
+  background-color: #05386b;
+  color: #fff;
+}
+
+.admin-profile-time table td:nth-child(1) {
+  border-left: 1px solid black;
+}
+
+.admin-profile-time table td:nth-child(6) {
+  border-right: 1px solid black;
+  max-width: 200px;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.admin-profile-time table td:nth-child(7) {
+  border: none;
+}
+/*# sourceMappingURL=AdminProfileTime.css.map */
