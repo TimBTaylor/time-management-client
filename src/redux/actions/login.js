@@ -1,6 +1,7 @@
 import axios from "axios";
 
 export const login = (userInfo) => async (dispatch) => {
+  console.log("login action run");
   try {
     dispatch({
       type: "SET_USER_INFO_REQUEST",
@@ -16,6 +17,10 @@ export const login = (userInfo) => async (dispatch) => {
         picture: userInfo.picture,
       },
     }).then((response) => {
+      console.log(response);
+      dispatch({
+        type: "SET_USER_INFO_SUCCESS",
+      });
       if (response.status === 200) {
         dispatch({
           type: "SET_USER_INFO",
@@ -36,9 +41,6 @@ export const login = (userInfo) => async (dispatch) => {
           error: response.statusText,
         });
       }
-      dispatch({
-        type: "SET_USER_INFO_SUCCESS",
-      });
     });
   } catch (error) {
     console.log(error);

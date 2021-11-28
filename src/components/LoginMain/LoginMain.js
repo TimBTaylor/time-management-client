@@ -16,6 +16,7 @@ export const LoginMain = () => {
   const loginFail = useSelector((state) => state.errorsReducer.error);
 
   const handleLogin = (googleData) => {
+    console.log(googleData);
     const userInfo = {
       email: googleData.profileObj.email,
       givenName: googleData.profileObj.givenName,
@@ -23,7 +24,7 @@ export const LoginMain = () => {
       picture: googleData.profileObj.imageUrl,
     };
     dispatch(login(userInfo));
-    navigate("/company-number");
+    // navigate("/company-number");
   };
 
   return (
