@@ -1,0 +1,28 @@
+$blue: #05386b;
+
+.job-entry-modal-container {
+  position: absolute;
+  z-index: 10;
+  top: 30%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  div {
+    height: 60px;
+    width: 180px;
+    background-color: $blue;
+    border-radius: 5px;
+    color: green;
+    font-weight: 600;
+    p {
+      display: inline-block;
+      margin-top: 20px;
+    }
+    p:nth-child(2) {
+      transform: translate(5px, 2px);
+    }
+  }
+}

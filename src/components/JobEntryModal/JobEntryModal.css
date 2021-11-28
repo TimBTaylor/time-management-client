@@ -1,0 +1,35 @@
+.job-entry-modal-container {
+  position: absolute;
+  z-index: 10;
+  top: 30%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.job-entry-modal-container div {
+  height: 60px;
+  width: 180px;
+  background-color: #05386b;
+  border-radius: 5px;
+  color: green;
+  font-weight: 600;
+}
+
+.job-entry-modal-container div p {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.job-entry-modal-container div p:nth-child(2) {
+  -webkit-transform: translate(5px, 2px);
+          transform: translate(5px, 2px);
+}
+/*# sourceMappingURL=JobEntryModal.css.map */

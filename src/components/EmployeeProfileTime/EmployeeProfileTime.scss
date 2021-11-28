@@ -53,7 +53,9 @@ $blue: #05386b;
 }
 
 @media (max-width: 500px) {
-  table {
-    margin-left: 0;
+  .employee-profile-time-container {
+    table {
+      margin-left: 0;
+    }
   }
 }

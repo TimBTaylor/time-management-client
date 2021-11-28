@@ -76,8 +76,15 @@ $googleTransition: #4372e1;
         rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     }
   }
-  .new-time-card {
-    margin-top: 40px;
+  .time-job-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .new-time-card,
+  .new-job {
+    margin: 40px 15px 0px 15px;
     align-self: center;
     display: flex;
     flex-direction: column;

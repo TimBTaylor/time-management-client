@@ -6,7 +6,7 @@ export const LoginNav = () => {
   return (
     <>
       <div className="l-nav">
-        <a href="/home" className="l-brand-link">
+        <a href="/" className="l-brand-link">
           TimeBase
         </a>
       </div>

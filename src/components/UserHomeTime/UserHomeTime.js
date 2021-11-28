@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { RiFileList2Fill } from "react-icons/ri";
+import { FiClipboard } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
 import { weeklyTimeEntries } from "../../redux/actions/weeklyTimeEntries";
 import { startOfWeek } from "date-fns";
@@ -59,11 +60,23 @@ export const UserHomeTime = () => {
         <p className="this-week">THIS WEEK {mondaysDate}</p>
       </div>
       <button>Submit Weekly Hours</button>
-      <div className="new-time-card">
-        <Link to="/new-time-card">
-          <RiFileList2Fill />
-        </Link>
-        <p>New Time Card</p>
+      <div className="time-job-container">
+        <div className="new-time-card">
+          <Link to="/new-time-card">
+            <RiFileList2Fill />
+          </Link>
+          <p>New Time Card</p>
+        </div>
+        {isAdmin ? (
+          <div className="new-job">
+            <Link to="/new-job">
+              <FiClipboard />
+            </Link>
+            <p>Create New Job</p>
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );

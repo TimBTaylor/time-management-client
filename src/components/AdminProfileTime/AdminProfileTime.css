@@ -41,54 +41,60 @@
   margin-top: 50px;
 }
 
-.admin-profile-time table {
+.admin-profile-time .all-time-container table {
   border-collapse: collapse;
-  margin-left: 20px;
+  margin-left: 55px;
 }
 
-.admin-profile-time table th {
+.admin-profile-time .all-time-container table th {
   min-width: 120px;
   border: 1px solid black;
 }
 
-.admin-profile-time table th:nth-child(6) {
+.admin-profile-time .all-time-container table th:nth-child(6) {
   outline: none;
 }
 
-.admin-profile-time table tr {
+.admin-profile-time .all-time-container table tr {
   height: 35px;
 }
 
-.admin-profile-time table td {
+.admin-profile-time .all-time-container table td {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
 }
 
-.admin-profile-time table td button {
+.admin-profile-time .all-time-container table td button {
   background: none;
   border: none;
   padding: 10px;
   font-size: 1.2rem;
 }
 
-.admin-profile-time table td button:hover {
+.admin-profile-time .all-time-container table td button:hover {
   cursor: pointer;
   background-color: #05386b;
   color: #fff;
 }
 
-.admin-profile-time table td:nth-child(1) {
+.admin-profile-time .all-time-container table td:nth-child(1) {
   border-left: 1px solid black;
 }
 
-.admin-profile-time table td:nth-child(6) {
+.admin-profile-time .all-time-container table td:nth-child(6) {
   border-right: 1px solid black;
   max-width: 200px;
   word-wrap: break-word;
   white-space: normal;
 }
 
-.admin-profile-time table td:nth-child(7) {
+.admin-profile-time .all-time-container table td:nth-child(7) {
   border: none;
+}
+
+@media (max-width: 500px) {
+  .admin-profile-time .all-time-container table {
+    margin-left: 0;
+  }
 }
 /*# sourceMappingURL=AdminProfileTime.css.map */

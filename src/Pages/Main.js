@@ -11,6 +11,7 @@ import { useSelector } from "react-redux";
 import { LoadingAnimation } from "../components/LoadingAnimation/LoadingAnimation";
 import { EmployeeProfile } from "./EmployeeProfile";
 import { AdminProfile } from "./AdminProfile";
+import { NewJob } from "./NewJob";
 
 export const Main = () => {
   const isLoading = useSelector((state) => state.userInfoReducer.isLoading);
@@ -86,6 +87,7 @@ export const Main = () => {
               path="/employee/profile"
               element={isAdmin ? <AdminProfile /> : <EmployeeProfile />}
             />
+            <Route exact path="/new-job" element={<NewJob />} />
           </Routes>
         </Router>
       )}

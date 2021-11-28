@@ -78,7 +78,7 @@ export const NewTimeCard = () => {
         }
       >
         <h1>Add Entry</h1>
-        <form>
+        <form onSubmit={(e) => handleSubmit(e)}>
           <div>
             <input
               type="date"
@@ -122,7 +122,7 @@ export const NewTimeCard = () => {
               onChange={(e) => setNotes(e.target.value)}
             />
           </div>
-          <button onClick={(e) => handleSubmit(e)}>SAVE</button>
+          <button type="submit">SAVE</button>
         </form>
       </div>
     </>

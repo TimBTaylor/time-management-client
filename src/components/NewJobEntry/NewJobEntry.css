@@ -2,15 +2,15 @@
   opacity: 0.2;
 }
 
-.new-time-card-container {
+.new-job-container {
   text-align: center;
 }
 
-.new-time-card-container h1 {
+.new-job-container h1 {
   color: #05386b;
 }
 
-.new-time-card-container div {
+.new-job-container div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -23,36 +23,44 @@
           align-items: center;
 }
 
-.new-time-card-container div input {
-  height: 35px;
-  width: 200px;
-  margin: 10px;
+.new-job-container div label {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.new-job-container div input {
+  height: 20px;
+  width: 195px;
+  margin: 5px 10px 10px 10px;
+  padding: 5px;
   border-radius: 5px;
   border: 1px solid #05386b;
 }
 
-.new-time-card-container div input:focus {
+.new-job-container div input:focus {
   outline: solid #05386b;
 }
 
-.new-time-card-container div textarea {
-  width: 200px;
+.new-job-container div textarea {
+  width: 195px;
   height: 80px;
   border-radius: 5px;
+  padding: 5px;
+  margin-top: 10px;
   border: 1px solid #05386b;
 }
 
-.new-time-card-container div textarea:focus {
+.new-job-container div textarea:focus {
   outline: solid #05386b;
 }
 
-.new-time-card-container div .notes {
+.new-job-container div .notes {
   padding-bottom: 80px;
   word-wrap: break-word;
   word-break: break-all;
 }
 
-.new-time-card-container div select {
+.new-job-container div select {
   height: 35px;
   width: 204px;
   margin: 10px;
@@ -60,12 +68,12 @@
   border: 1px solid #05386b;
 }
 
-.new-time-card-container div select:focus {
+.new-job-container div select:focus {
   outline: none;
   border: 3px solid #05386b;
 }
 
-.new-time-card-container button {
+.new-job-container button {
   height: 40px;
   width: 200px;
   background-color: #05386b;
@@ -77,10 +85,10 @@
   transition: 0.3s ease-in-out;
 }
 
-.new-time-card-container button:hover {
+.new-job-container button:hover {
   background-color: #074b8f;
   cursor: pointer;
   -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 10px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
           box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 10px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
-/*# sourceMappingURL=NewTimeCard.css.map */
+/*# sourceMappingURL=NewJobEntry.css.map */
