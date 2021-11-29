@@ -58,7 +58,7 @@ export const LoginMain = () => {
                   Sign in/create account with Google
                 </button>
               )}
-              clientId="322422677461-6nlclaik5vcgvhu8l4eb2oik99jm4a8c.apps.googleusercontent.com"
+              clientId="322422677461-ppfmok8nudsq9712fk306u9rsce9cip2.apps.googleusercontent.com"
               onSuccess={handleLogin}
               onFailure={(response) => console.log(response)}
               //onFailure={} add failure here
