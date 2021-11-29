@@ -12,9 +12,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 0px 30px;
-  -webkit-transform: translateY(25%);
-          transform: translateY(25%);
+  margin-top: 100px;
 }
 
 .intro {
@@ -54,8 +52,7 @@
 
 @media (max-width: 500px) {
   .home-view-container {
-    -webkit-transform: translateY(10%);
-            transform: translateY(10%);
+    margin-top: 35px;
   }
 }
 /*# sourceMappingURL=HomeView.css.map */
