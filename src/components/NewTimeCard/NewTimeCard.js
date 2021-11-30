@@ -29,7 +29,7 @@ export const NewTimeCard = () => {
     try {
       await axios({
         method: "post",
-        url: "http://timemanagement-env.eba-xnbvikdz.us-east-1.elasticbeanstalk.com/time/new-time-entry",
+        url: "https://timebasebytim.com/time/new-time-entry",
         headers: { "Content-Type": "application/json" },
         data: {
           adminId: isAdmin ? userId : null,

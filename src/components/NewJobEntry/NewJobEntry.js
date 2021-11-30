@@ -23,7 +23,7 @@ export const NewJobEntry = () => {
     try {
       await axios({
         method: "post",
-        url: "http://timemanagement-env.eba-xnbvikdz.us-east-1.elasticbeanstalk.com/jobs/new-job",
+        url: "https://timebasebytim.com/jobs/new-job",
         headers: { "Content-Type": "application/json" },
         data: {
           companyNumber,
