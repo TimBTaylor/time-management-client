@@ -7,7 +7,7 @@ export const login = (userInfo) => async (dispatch) => {
     });
     await axios({
       method: "post",
-      url: "https://timemanagement-env.eba-xnbvikdz.us-east-1.elasticbeanstalk.com/user/auth/login",
+      url: "https://timebasebytim.com/user/auth/login",
       header: { "Content-Type": "application/json" },
       data: {
         email: userInfo.email,

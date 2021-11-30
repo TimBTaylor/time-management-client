@@ -7,7 +7,7 @@ export const addCompany = (userInfo) => async (dispatch) => {
     });
     await axios({
       method: "put",
-      url: "https://timemanagement-env.eba-xnbvikdz.us-east-1.elasticbeanstalk.com/user/update-company",
+      url: "https://timebasebytim.com/user/update-company",
       header: { "Content-Type": "application/json" },
       data: {
         email: userInfo.email,

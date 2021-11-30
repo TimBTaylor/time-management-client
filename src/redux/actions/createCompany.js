@@ -4,7 +4,7 @@ export const createCompany = (companyInfo) => async (dispatch) => {
   try {
     await axios({
       method: "post",
-      url: "https://timemanagement-env.eba-xnbvikdz.us-east-1.elasticbeanstalk.com/company/new-company/",
+      url: "https://timebasebytim.com/company/new-company/",
       header: { "Content-Type": "application/json" },
       data: {
         companyName: companyInfo.companyName,

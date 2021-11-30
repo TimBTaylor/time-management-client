@@ -6,7 +6,7 @@ export const weeklyTimeEntries = (userInfo) => async (dispatch) => {
   try {
     await axios({
       method: "post",
-      url: "https://timemanagement-env.eba-xnbvikdz.us-east-1.elasticbeanstalk.com/time/weekly-time",
+      url: "https://timebasebytim.com/time/weekly-time",
       headers: { "Content-Type": "application/json" },
       data: {
         userID: userInfo.userID,
@@ -35,7 +35,7 @@ export const weeklyTimeEntries = (userInfo) => async (dispatch) => {
         } else if (hours < 10) {
           hours = "0" + hours;
         }
-        minutes = minutes > 30 ? minutes : "00";
+        minutes = minutes >= 30 ? minutes : "00";
         let totalTime = hours + ":" + minutes;
         dispatch({
           type: "SET_USER_TOTAL_TIME",

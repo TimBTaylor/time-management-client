@@ -7,7 +7,7 @@ export const allEntries = (userInfo) => async (dispatch) => {
     // });
     await axios({
       method: "get",
-      url: `https://timemanagement-env.eba-xnbvikdz.us-east-1.elasticbeanstalk.com/time/${userInfo.userId}/${userInfo.typeOfId}/all-time-entries-user`,
+      url: `https://timebasebytim.com/time/${userInfo.userId}/${userInfo.typeOfId}/all-time-entries-user`,
       header: { "Content-Type": "applicaton/json" },
     }).then((response) => {
       if (response.status === 200) {

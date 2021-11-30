@@ -7,7 +7,7 @@ export const companiesEntries = (companyNumber) => async (dispatch) => {
   try {
     await axios({
       method: "get",
-      url: `https://timemanagement-env.eba-xnbvikdz.us-east-1.elasticbeanstalk.com/time/${companyNumber}/all-time-entries-company`,
+      url: `https://timebasebytim.com/time/${companyNumber}/all-time-entries-company`,
     }).then((response) => {
       if (response.status === 200) {
         let sortedEntries = response.data.sort(function (a, b) {

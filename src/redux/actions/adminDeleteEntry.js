@@ -9,7 +9,7 @@ export const adminDeleteEntry = (timeEntryInfo) => async (dispatch) => {
   try {
     await axios({
       method: "delete",
-      url: "https://timemanagement-env.eba-xnbvikdz.us-east-1.elasticbeanstalk.com/time/delete-time-entry",
+      url: "https://timebasebytim.com/time/delete-time-entry",
       header: { "Content-Type": "application/json" },
       data: {
         timeEntryId: timeEntryInfo.timeEntryId,
