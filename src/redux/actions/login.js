@@ -1,14 +1,13 @@
 import axios from "axios";
 
 export const login = (userInfo) => async (dispatch) => {
-  console.log("login action run");
   try {
     dispatch({
       type: "SET_USER_INFO_REQUEST",
     });
     await axios({
       method: "post",
-      url: "http://timemanagement-env.eba-xnbvikdz.us-east-1.elasticbeanstalk.com/user/auth/login",
+      url: "https://timemanagement-env.eba-xnbvikdz.us-east-1.elasticbeanstalk.com/user/auth/login",
       header: { "Content-Type": "application/json" },
       data: {
         email: userInfo.email,
@@ -17,7 +16,6 @@ export const login = (userInfo) => async (dispatch) => {
         picture: userInfo.picture,
       },
     }).then((response) => {
-      console.log(response);
       dispatch({
         type: "SET_USER_INFO_SUCCESS",
       });
@@ -40,6 +38,7 @@ export const login = (userInfo) => async (dispatch) => {
           type: "SET_USER_INFO_ERROR",
           error: response.statusText,
         });
+        console.log(response);
       }
     });
   } catch (error) {

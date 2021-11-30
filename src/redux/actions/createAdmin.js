@@ -7,7 +7,7 @@ export const createAdmin = (userInfo) => async (dispatch) => {
   try {
     await axios({
       method: "post",
-      url: "http://timemanagement-env.eba-xnbvikdz.us-east-1.elasticbeanstalk.com/user/auth/create-admin",
+      url: "https://timemanagement-env.eba-xnbvikdz.us-east-1.elasticbeanstalk.com/user/auth/create-admin",
       headers: { "Content-Type": "application/json" },
       data: {
         email: userInfo.email,

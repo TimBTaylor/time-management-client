@@ -12,7 +12,7 @@ export const deleteEntry = (timeEntryInfo) => async (dispatch) => {
   try {
     await axios({
       method: "delete",
-      url: "http://timemanagement-env.eba-xnbvikdz.us-east-1.elasticbeanstalk.com/time/delete-time-entry",
+      url: "https://timemanagement-env.eba-xnbvikdz.us-east-1.elasticbeanstalk.com/time/delete-time-entry",
       header: { "Content-Type": "application/json" },
       data: {
         timeEntryId: timeEntryInfo.timeEntryId,

@@ -6,7 +6,7 @@ export const weeklyTimeEntries = (userInfo) => async (dispatch) => {
   try {
     await axios({
       method: "post",
-      url: "http://timemanagement-env.eba-xnbvikdz.us-east-1.elasticbeanstalk.com/time/weekly-time",
+      url: "https://timemanagement-env.eba-xnbvikdz.us-east-1.elasticbeanstalk.com/time/weekly-time",
       headers: { "Content-Type": "application/json" },
       data: {
         userID: userInfo.userID,
