@@ -22,7 +22,7 @@ export const Main = () => {
 
   return (
     <div>
-      {!isLoading ? (
+      {isLoading ? (
         <LoadingAnimation />
       ) : (
         <Router>
