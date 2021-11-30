@@ -15,10 +15,14 @@ export const addCompany = (userInfo) => async (dispatch) => {
         tableName: userInfo.tableName,
       },
     }).then((response) => {
-      if (response.data === "Users company updated") {
+      if (response.status === 200) {
         dispatch({
           type: "SET_USER_COMPANY_NUMBER",
-          payload: userInfo.companyNumber,
+          payload: response.data.companyNumber,
+        });
+        dispatch({
+          type: "SET_USER_COMPANY_NAME",
+          payload: response.data.companyName,
         });
         dispatch({
           type: "SET_USER_VALID_CODE",

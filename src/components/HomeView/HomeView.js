@@ -40,7 +40,7 @@ export const HomeView = () => {
             Get started now - it's free
           </button>
         )}
-        clientId="322422677461-6nlclaik5vcgvhu8l4eb2oik99jm4a8c.apps.googleusercontent.com"
+        clientId="322422677461-pf3q7g6ogdk5ia3ns7ss999vkrmss4sl.apps.googleusercontent.com"
         onSuccess={handleGoogleLogin}
         onFailure={(response) => console.log(response)}
       />

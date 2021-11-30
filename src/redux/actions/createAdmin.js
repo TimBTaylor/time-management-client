@@ -16,7 +16,7 @@ export const createAdmin = (userInfo) => async (dispatch) => {
         picture: userInfo.picture,
       },
     }).then((response) => {
-      if (response.status === 201) {
+      if (response.status === 200 || response.status === 201) {
         dispatch({
           type: "SET_USER_INFO",
           payload: {
@@ -30,20 +30,6 @@ export const createAdmin = (userInfo) => async (dispatch) => {
             date: response.data.date,
           },
         });
-      } else if (response.status === 200) {
-        dispatch({
-          type: "SET_USER_IMAGE",
-          payload: userInfo.picture,
-        });
-        if (response.data.isAdmin) {
-          dispatch({
-            type: "SET_USER_IS_ADMIN",
-          });
-        } else {
-          dispatch({
-            type: "SET_USER_IS_NOT_ADMIN",
-          });
-        }
       } else {
         dispatch({
           type: "SET_USER_INFO_ERROR",

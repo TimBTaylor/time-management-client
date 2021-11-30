@@ -38,7 +38,7 @@ export const CompanyNumber = () => {
         tableName: "Employees",
       };
       dispatch(addCompany(userInfo));
-      navigate("/create-company");
+      navigate("/employee/home");
     }
   };
 

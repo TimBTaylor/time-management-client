@@ -16,10 +16,7 @@ export const login = (userInfo) => async (dispatch) => {
         picture: userInfo.picture,
       },
     }).then((response) => {
-      dispatch({
-        type: "SET_USER_INFO_SUCCESS",
-      });
-      if (response.status === 200) {
+      if (response.status === 200 || response.status === 201) {
         dispatch({
           type: "SET_USER_INFO",
           payload: {
@@ -38,10 +35,12 @@ export const login = (userInfo) => async (dispatch) => {
           type: "SET_USER_INFO_ERROR",
           error: response.statusText,
         });
-        console.log(response);
       }
     });
   } catch (error) {
     console.log(error);
   }
+  dispatch({
+    type: "SET_USER_INFO_SUCCESS",
+  });
 };

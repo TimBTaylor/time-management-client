@@ -6,6 +6,7 @@ import githubLogo from "../../images/github-logo.svg";
 import { login } from "../../redux/actions/login";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
+import { createAdmin } from "../../redux/actions/createAdmin";
 
 import "./LoginMain.css";
 
@@ -24,6 +25,17 @@ export const LoginMain = () => {
     };
     dispatch(login(userInfo));
     navigate("/company-number");
+  };
+
+  const handleAdminCreateAccount = (googleData) => {
+    const userInfo = {
+      email: googleData.profileObj.email,
+      givenName: googleData.profileObj.givenName,
+      familyName: googleData.profileObj.familyName,
+      picture: googleData.profileObj.imageUrl,
+    };
+    dispatch(createAdmin(userInfo));
+    navigate("/create-company");
   };
 
   return (
@@ -87,7 +99,7 @@ export const LoginMain = () => {
                 </button>
               )}
               clientId="322422677461-pf3q7g6ogdk5ia3ns7ss999vkrmss4sl.apps.googleusercontent.com"
-              onSuccess={handleLogin}
+              onSuccess={handleAdminCreateAccount}
               onFailure={(response) => console.log(response)}
               //onFailure={} add failure here
             />

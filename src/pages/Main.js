@@ -32,7 +32,15 @@ export const Main = () => {
             <Route
               exact
               path="/employee/home"
-              element={isAdmin > 0 ? <AdminHome /> : <EmployeeHome />}
+              element={
+                isAdmin > 0 ? (
+                  <AdminHome />
+                ) : companyNumber !== null ? (
+                  <EmployeeHome />
+                ) : (
+                  <CompanyNum />
+                )
+              }
             />
             <Route
               exact
@@ -74,7 +82,7 @@ export const Main = () => {
                   companyNumber === null ? (
                     <CreateCompany />
                   ) : (
-                    <Login />
+                    <AdminHome />
                   )
                 ) : (
                   <Login />

@@ -20,7 +20,7 @@ export const EmployeeProfileTime = () => {
     };
 
     dispatch(allEntries(userInfo));
-  }, [allTimeEntries, isAdmin, userId, dispatch]);
+  }, [isAdmin, userId, dispatch]);
   return (
     <div className="employee-profile-time-container">
       <div>
